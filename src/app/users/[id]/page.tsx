@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = ({ params }: any) => {
-  let { id } = params;
+const page = () => {
+  let { id } = useParams();
   const [user, setUser] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   console.log(id);

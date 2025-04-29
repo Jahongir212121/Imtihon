@@ -1,8 +1,9 @@
 "use client";
+import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const Page = ({ params }: any) => {
-  const { id } = params;
+const Page = () => {
+  const { id } = useParams();
   const [cart, setCart] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -17,7 +18,6 @@ const Page = ({ params }: any) => {
         setLoading(false);
       }
     }
-
     fetchCart();
   }, [id]);
 
@@ -27,14 +27,14 @@ const Page = ({ params }: any) => {
         <div className="w-10 h-10 border-4 border-t-blue-500 border-gray-300 rounded-full animate-spin"></div>
       ) : (
         <div>
-          <h2 className="text-xl font-bold mb-2">Cart ID: {cart?.id}</h2>
           <p>User ID: {cart?.userId}</p>
           <p>Date: {cart?.date}</p>
           <h3 className="mt-4 font-semibold">Products:</h3>
-          <ul className="list-disc ml-6">
+          <ul className=" list-none  ml-6">
             {cart?.products?.map((product: any) => (
-              <li key={product.productId}>
-                Product ID: {product.productId}, Quantity: {product.quantity}
+              <li className="m-0" key={product.productId}>
+                Product ID: {product.productId} <br />
+                Quantity: {product.quantity}
               </li>
             ))}
           </ul>

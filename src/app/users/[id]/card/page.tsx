@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = ({ params }: any) => {
-  let { id } = params;
+const page = () => {
+  let { id } = useParams();
   const [cart, setCart] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
@@ -39,7 +40,11 @@ const page = ({ params }: any) => {
               </Link>
               <div className="flex gap-3 flex-col">
                 {need?.map((item: any) => (
-                  <Link href={`card/${item.id}`} className="text-blue-500">
+                  <Link
+                    key={item.id}
+                    href={`card/${item.id}`}
+                    className="text-blue-500"
+                  >
                     {item.id}
                   </Link>
                 ))}
