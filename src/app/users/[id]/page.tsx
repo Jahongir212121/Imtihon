@@ -1,11 +1,12 @@
 "use client";
+import { UserType } from "@/app/interface";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  let { id } = useParams();
-  const [user, setUser] = useState<any>();
+  const { id } = useParams();
+  const [user, setUser] = useState<UserType>();
   const [loading, setLoading] = useState<boolean>(false);
   console.log(id);
   useEffect(() => {

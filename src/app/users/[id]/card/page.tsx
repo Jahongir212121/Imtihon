@@ -1,13 +1,13 @@
 "use client";
-import { log } from "console";
+import { CartType } from "@/app/interface";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   console.log(id);
-  const [cart, setCart] = useState<any>();
+  const [cart, setCart] = useState<CartType>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     async function fetchData() {

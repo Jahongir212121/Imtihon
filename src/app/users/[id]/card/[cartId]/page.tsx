@@ -1,11 +1,12 @@
 "use client";
+import { CartType } from "@/app/interface";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
   const { id } = useParams();
   console.log(id);
-  const [cart, setCart] = useState<any>(null);
+  const [cart, setCart] = useState<CartType>();
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
