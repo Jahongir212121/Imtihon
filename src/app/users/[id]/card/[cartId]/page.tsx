@@ -1,5 +1,5 @@
 "use client";
-import { CartType } from "@/app/interface";
+import { CartType, ProductItem } from "@/app/interface";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -33,7 +33,7 @@ const Page = () => {
           <p>Date: {cart?.date}</p>
           <h3 className="mt-4 font-semibold">Products:</h3>
           <ul className=" list-none  ml-6">
-            {cart?.products?.map((product) => (
+            {cart?.products?.map((product: ProductItem) => (
               <li className="m-0" key={product.productId}>
                 Product ID: {product.productId} <br />
                 Quantity: {product.quantity}

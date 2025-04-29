@@ -40,3 +40,7 @@ export interface CartType {
   ];
   __v: number;
 }
+export interface ProductItem {
+  productId: number;
+  quantity: number;
+}
