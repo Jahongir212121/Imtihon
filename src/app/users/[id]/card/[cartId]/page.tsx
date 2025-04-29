@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const Page = () => {
   const { id } = useParams();
+  console.log(id);
   const [cart, setCart] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 

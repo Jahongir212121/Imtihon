@@ -1,10 +1,12 @@
 "use client";
+import { log } from "console";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
   let { id } = useParams();
+  console.log(id);
   const [cart, setCart] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
@@ -57,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
