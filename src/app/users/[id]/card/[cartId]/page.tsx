@@ -33,7 +33,7 @@ const Page = () => {
           <p>Date: {cart?.date}</p>
           <h3 className="mt-4 font-semibold">Products:</h3>
           <ul className=" list-none  ml-6">
-            {cart?.products?.map((product: any) => (
+            {cart?.products?.map((product) => (
               <li className="m-0" key={product.productId}>
                 Product ID: {product.productId} <br />
                 Quantity: {product.quantity}

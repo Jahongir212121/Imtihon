@@ -22,13 +22,8 @@ const Page = () => {
     }
     fetchData();
   }, [id]);
-  const need = cart?.filter((item: any) => item.userId == id);
+  const need = cart?.filter((item: CartType) => item.userId === Number(id));
   console.log(need);
-  {
-    need?.map((item: any) => {
-      console.log(item?.id);
-    });
-  }
   return (
     <div className="p-4">
       {loading ? (
