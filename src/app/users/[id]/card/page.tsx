@@ -36,7 +36,7 @@ const Page = () => {
                 Users
               </Link>
               <div className="flex gap-3 flex-col">
-                {need?.map((item: any) => (
+                {need?.map((item: CartType) => (
                   <Link
                     key={item.id}
                     href={`card/${item.id}`}
