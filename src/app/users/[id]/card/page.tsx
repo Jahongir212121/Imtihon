@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 const Page = () => {
   const { id } = useParams();
   console.log(id);
-  const [cart, setCart] = useState<CartType>();
+  const [cart, setCart] = useState<CartType[]>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     async function fetchData() {
